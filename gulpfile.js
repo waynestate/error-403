@@ -10,7 +10,7 @@ var appDir = 'src/';
 var sassDir = appDir + 'scss';
 
 // Which directory should the app compile to?
-var targetAppDir = '';
+var targetAppDir = 'dist/';
 var targetResourcesDir = targetAppDir;
 
 // Which directory should Sass compile to?
@@ -23,7 +23,7 @@ var bowerDir = 'bower_components';
 var foundationJsDir = bowerDir + '/foundation/js/foundation';
 
 gulp.task('styles', function () {
-    return gulp.src(sassDir + '/main.scss')
+    return gulp.src(sassDir + '/403.scss')
         .pipe($.plumber())
         .pipe($.rubySass({
             style: 'expanded',

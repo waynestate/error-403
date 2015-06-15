@@ -19,7 +19,7 @@
         <meta name="DC.publisher" content="Wayne State University" />
         <meta name="DC.description" content="Michigan's only urban public research university. With more than 400 degree programs and a location in the heart of Detroit's cultural center, Wayne State offers a distinctive educational experience to students from around the world." />
         <meta name="DC.format" content="text/html" />
-        <link href="<?php echo $path_css; ?>main.css" rel="stylesheet" type="text/css"  media="all" />
+        <link href="<?php echo $path_css; ?>403.css" rel="stylesheet" type="text/css"  media="all" />
         <link href="//fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     </head>
     <body>
