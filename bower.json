@@ -1,0 +1,22 @@
+{
+    "name": "404-v2",
+    "homepage": "http://assets.wayne.edu/",
+    "authors": [
+        "Web Communications <web@wayne.edu>"
+    ],
+    "description": "",
+    "main": "www.80/",
+    "keywords": [],
+    "private": true,
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ],
+    "devDependencies": {
+        "foundation": "~5.5",
+        "styleguide": "http://github.com/waynestate/styleguide.git#~0.2"
+    }
+}

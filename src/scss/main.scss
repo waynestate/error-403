@@ -1,0 +1,65 @@
+// Import Foundation Normalize
+@import "../bower_components/foundation/scss/normalize";
+
+// Import the media queries (required above foundation/components/global)
+@import "../bower_components/styleguide/global/foundation/scss/media-queries";
+
+// Import Foundation Global (Functions and Default settings)
+@import "../bower_components/foundation/scss/foundation/components/global";
+
+// Import Style Guide and Local Vars (required after foundation/components/global)
+@import "../bower_components/styleguide/global/foundation/scss/vars";
+
+// Import Style Guide Functions
+@import "../bower_components/styleguide/global/foundation/scss/functions";
+
+// Import Style Guide Mixins
+@import "../bower_components/styleguide/global/foundation/scss/mixins";
+
+// Import Foundation Components
+@import "../bower_components/foundation/scss/foundation/components/grid";
+@import "../bower_components/foundation/scss/foundation/components/type";
+@import "../bower_components/foundation/scss/foundation/components/forms";
+
+body {
+	background-color: #fef8f1;
+}
+
+.header {
+	background: #0c5449;
+	padding: 22px 0px 22px 0px;
+}
+
+.center-site {
+	@media #{$large-up} {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+}
+
+.content {
+	@media #{$small-only} {
+	  text-align: center;
+	}
+	@media #{$medium-only} {
+	  text-align: center;
+	}
+
+	&, h1, h2, h3, h4, h5, h6 {
+		font-family: 'Noto Sans';
+	}
+
+	a {
+		text-decoration: underline;
+	}
+
+	h1 {
+		color: #99a0a6;
+		font-size: 7em;
+	}
+
+	h2 {
+		font-size: 2em;
+	}
+}
