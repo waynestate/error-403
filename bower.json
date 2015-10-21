@@ -13,6 +13,7 @@
       "type": "git",
       "url": "git@github.com:waynestate/error-403.git"
     },
+    "license": "MIT",
     "keywords": [
       "foundation",
       "wayne-state-university",
