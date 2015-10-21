@@ -18,7 +18,7 @@
       "wayne-state-university",
       "http-error"
     ],
-    "private": false,
+    "private": true,
     "ignore": [
         "**/.*",
         "node_modules",
