@@ -1,0 +1,22 @@
+{
+    "name": "waynestate/error-403",
+    "version": "1.2.1",
+    "type": "library",
+    "description": "Wayne State University Error 500 HTTP Status",
+    "keywords": ["status","http","error","403"],
+    "homepage": "https://github.com/waynestate/error-403",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Web Communications",
+            "email": "web@wayne.edu"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/waynestate/error-403/issues",
+        "source": "https://github.com/waynestate/error-403"
+    },
+    "require": {
+        "php": ">=5.3.0"
+    }
+}
