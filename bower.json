@@ -1,12 +1,24 @@
 {
-    "name": "error-403",
-    "homepage": "http://assets.wayne.edu/",
+    "name": "wsu-error-403",
+    "homepage": "https://github.com/waynestate/error-403",
     "authors": [
         "Web Communications <web@wayne.edu>"
     ],
     "description": "",
-    "main": "www.80/",
-    "keywords": [],
+    "main": [
+      "dist/403.php",
+      "src/scss/403.scss"
+    ],
+    "repository": {
+      "type": "git",
+      "url": "git@github.com:waynestate/error-403.git"
+    },
+    "license": "MIT",
+    "keywords": [
+      "foundation",
+      "wayne-state-university",
+      "http-error"
+    ],
     "private": true,
     "ignore": [
         "**/.*",
@@ -15,8 +27,8 @@
         "test",
         "tests"
     ],
-    "devDependencies": {
-        "foundation": "~5.5",
-        "styleguide": "http://github.com/waynestate/styleguide.git#~0.2"
+    "dependencies": {
+      "foundation": "~5.5",
+      "styleguide": "http://github.com/waynestate/styleguide.git#~0.2"
     }
 }
