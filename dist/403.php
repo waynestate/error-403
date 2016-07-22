@@ -1,11 +1,3 @@
-<?php
-    // Change this to develop locally
-    $local = ($_SERVER['HTTP_HOST'] == 'error-403.wayne.dev') ? true : false;
-
-    // If we aren't locally
-    $path_images = ($local == true) ? '' : '/_resources/images/';
-    $path_css = ($local == true) ? '' : '/_resources/css/';
-?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -19,14 +11,14 @@
         <meta name="DC.publisher" content="Wayne State University" />
         <meta name="DC.description" content="Michigan's only urban public research university. With more than 400 degree programs and a location in the heart of Detroit's cultural center, Wayne State offers a distinctive educational experience to students from around the world." />
         <meta name="DC.format" content="text/html" />
-        <link href="<?php echo $path_css; ?>403.css" rel="stylesheet" type="text/css"  media="all" />
+        <link href="/_resources/css/403.css" rel="stylesheet" type="text/css"  media="all" />
         <link href="//fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     </head>
     <body>
         <div class="header">
             <div class="row">
                 <div class="xlarge-12 large-12 medium-12 small-12 columns">
-                    <a href="http://wayne.edu/"><img alt="Wayne State University" src="<?php echo $path_images; ?>waynestate-wordmark.png" width="350" height="34"></a>
+                    <a href="http://wayne.edu/"><img alt="Wayne State University" src="/_resources/images/waynestate-wordmark.png" width="350" height="34"></a>
                 </div>
             </div>
         </div>
@@ -46,7 +38,7 @@
                 </div>
 
                 <div class="xlarge-6 large-6 medium-12 small-12 columns">
-                    <img src="<?php echo $path_images; ?>403.png" title="Forbidden" />
+                    <img src="/_resources/images/403.png" title="Forbidden" />
                 </div>
             </div>
         </div>
@@ -59,7 +51,7 @@
 
             ga('create', 'UA-35684592-1', 'wayne.edu', {'name': 'allWayneState'});
             ga('allWayneState.send', 'pageview');
-            ga('allWayneState.send', 'event', 'Error', '403', 'page: //<?php echo $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?> ref: <?php echo $_SERVER['HTTP_REFERER']; ?>');
+            ga('allWayneState.send', 'event', 'Error', '403', 'page: //{{ $request->server("HTTP_HOST") }}{{ $request->server("REQUEST_URI") }} ref: {{ $request->server("HTTP_REFERER") }}');
         </script>
     </body>
 </html>

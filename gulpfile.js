@@ -2,6 +2,9 @@ var gulp = require('gulp');
 
 // Load plugins
 var $ = require('gulp-load-plugins')();
+var stylelint = require('stylelint');
+var reporter = require('postcss-reporter');
+var scss = require('postcss-scss')
 
 // Where is the app?
 var appDir = 'src/';
@@ -13,28 +16,36 @@ var sassDir = appDir + 'scss';
 var targetAppDir = 'dist/';
 var targetResourcesDir = targetAppDir;
 
-// Which directory should Sass compile to?
-var targetCSSDir = targetResourcesDir + '';
-
-// Bower Dir
-var bowerDir = 'bower_components';
-
-// Foundation JS Dir
-var foundationJsDir = bowerDir + '/foundation/js/foundation';
-
 gulp.task('styles', function () {
-    return gulp.src(sassDir + '/403.scss')
+    gulp.src(sassDir + "/**/*.scss")
+    // Capture all errors
         .pipe($.plumber())
-        .pipe($.rubySass({
-            style: 'expanded',
-            loadPath: ['bower_components'],
-            compass: false,
-            bundleExec: true
+
+        // Lint the scss
+        .pipe($.postcss([
+            stylelint(),
+            reporter({clearMessages: true, throwError: true}),
+        ], {syntax: scss}))
+
+        // Compile the scss
+        .pipe($.sourcemaps.init({loadMaps: true}))
+        .pipe($.sass({
+            includePaths: ['node_modules'],
+        }).on('error', $.sass.logError))
+
+        // Add suppost for older browsers
+        .pipe($.autoprefixer({
+            browsers: ['last 4 versions'],
+            cascade: false
         }))
-        .pipe($.autoprefixer('last 5 version'))
-        .pipe($.minifyCss())
-        .pipe(gulp.dest(targetCSSDir))
-        .pipe($.size());
+
+        // Minify
+        .pipe($.cssnano())
+
+        // Write the files to the public directory
+        .pipe($.sourcemaps.write('./'))
+        .pipe(gulp.dest(targetResourcesDir))
+        .pipe($.size())
 });
 
 // Default task
@@ -42,13 +53,5 @@ gulp.task('default', ['styles']);
 
 // Keep an eye on Sass, JS, for changes...
 gulp.task('watch', ['styles'], function () {
-
-    // Initialize livereload
-    $.livereload = $.livereload();
-
-    gulp.watch(targetAppDir + '403.css', function (file) {
-        $.livereload.changed(file.path);
-    });
-
     gulp.watch(sassDir + '/**/*.scss', ['styles']);
 });
