@@ -8,14 +8,18 @@
 @include foundation-button;
 @include foundation-forms;
 @include foundation-visibility-classes;
+@import "./@waynestate/styleguide/src/scss/_wsuheader";
 
 body {
     background-color: #fef8f1;
 }
 
-.header {
-    background: #0c5449;
-    padding: 22px 0;
+.wsuheader {
+    padding: 28px 0;
+
+    .wsuwordmark {
+        margin-top: 0;
+    }
 }
 
 .center-site {

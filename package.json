@@ -17,7 +17,7 @@
     },
     "homepage": "",
     "devDependencies": {
-        "@waynestate/styleguide": "~1.0.1",
+        "@waynestate/styleguide": "~1.1.1",
         "foundation-sites": "^6.2.3",
         "gulp": "^3.9.1",
         "gulp-autoprefixer": "^3.1.0",
