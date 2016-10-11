@@ -1,0 +1,9 @@
+{
+  "extends": "stylelint-config-standard",
+  "ignoreFiles": [
+  ],
+  "rules": {
+    "indentation": 4,
+    "selector-list-comma-newline-after": "always-multi-line"
+  }
+}
