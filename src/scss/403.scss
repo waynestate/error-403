@@ -5,21 +5,40 @@
 @include foundation-global-styles;
 @include foundation-grid;
 @include foundation-typography;
-@include foundation-button;
-@include foundation-forms;
 @include foundation-visibility-classes;
-@import "./@waynestate/styleguide/src/scss/_wsuheader";
+@import "@waynestate/wsuheader/src/header";
 
 body {
     background-color: #fef8f1;
 }
 
-.wsuheader {
-    padding: 28px 0;
+.skip ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
 
-    .wsuwordmark {
-        margin-top: 0;
-    }
+.skip a {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    text-align: left;
+    overflow: hidden;
+    color: #000;
+    background-color: #fff;
+    padding: 2px;
+    left: -1000px;
+}
+
+.skip a:active,
+.skip a:focus,
+.skip a:hover {
+    top: 0;
+    left: 0;
+    overflow: visible;
+    z-index: 50;
+    width: auto;
+    height: auto;
 }
 
 .center-site {
@@ -32,10 +51,6 @@ body {
 }
 
 .content {
-    @include breakpoint(medium down) {
-        text-align: center;
-    }
-
     &, h1, h2, h3, h4, h5, h6 {
         font-family: 'Noto Sans';
         font-weight: 400;
@@ -46,11 +61,29 @@ body {
     }
 
     h1 {
+        @include breakpoint(medium down) {
+            text-align: center;
+        }
+
         color: #99a0a6;
         font-size: 7em;
     }
 
     h2 {
+        @include breakpoint(medium down) {
+            font-size: 1.5em;
+        }
+
         font-size: 2em;
     }
+}
+
+.forbidden-graphic {
+    @include breakpoint(medium down) {
+        background-position: center top;
+    }
+
+    min-height: 550px;
+    background: transparent url("/_resources/images/403.png") no-repeat center center;
+    background-size: 70% auto;
 }
