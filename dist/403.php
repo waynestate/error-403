@@ -26,7 +26,7 @@
         <div class="header">
             <div class="row">
                 <div class="xlarge-12 large-12 medium-12 small-12 columns">
-                    <a href="http://wayne.edu/"><img alt="Wayne State University" src="<?php echo $path_images; ?>waynestate-wordmark.png" width="350" height="34"></a>
+                    <a href="https://wayne.edu/"><img alt="Wayne State University" src="<?php echo $path_images; ?>waynestate-wordmark.png" width="350" height="34"></a>
                 </div>
             </div>
         </div>
@@ -59,7 +59,7 @@
 
             ga('create', 'UA-35684592-1', 'wayne.edu', {'name': 'allWayneState'});
             ga('allWayneState.send', 'pageview');
-            ga('allWayneState.send', 'event', 'Error', '403', 'page: //<?php echo $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?> ref: <?php echo $_SERVER['HTTP_REFERER']; ?>');
+            ga('allWayneState.send', 'event', 'Error', '403', 'page: //<?php echo htmlspecialchars($_SERVER['HTTP_HOST'], ENT_QUOTES, 'UTF-8') . htmlspecialchars($_SERVER['REQUEST_URI'], ENT_QUOTES, 'UTF-8'); ?> ref: <?php echo htmlspecialchars($_SERVER['HTTP_REFERER'], ENT_QUOTES, 'UTF-8'); ?>');
         </script>
     </body>
 </html>
