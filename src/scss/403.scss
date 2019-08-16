@@ -8,7 +8,7 @@
 @include foundation-visibility-classes;
 @import "@waynestate/wsuheader/src/header";
 
-body {
+html {
     background-color: #fef8f1;
 }
 
@@ -65,7 +65,7 @@ body {
             text-align: center;
         }
 
-        color: #99a0a6;
+        color: #6b7175;
         font-size: 7em;
     }
 
